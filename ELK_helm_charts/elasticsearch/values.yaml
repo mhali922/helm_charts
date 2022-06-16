@@ -13,8 +13,8 @@ roles:
   ingest: "true"
   data: "true"
 
-replicas: 3
-minimumMasterNodes: 2
+replicas: 1
+minimumMasterNodes: 1
 
 esMajorVersion: ""
 
@@ -56,11 +56,11 @@ esJavaOpts: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "128m"
+    memory: "128Mi"
   limits:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "256m"
+    memory: "256Mi"
 
 initResources: {}
   # limits:
@@ -84,7 +84,7 @@ volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
   resources:
     requests:
-      storage: 30Gi
+      storage: 8Gi
 
 rbac:
   create: false
