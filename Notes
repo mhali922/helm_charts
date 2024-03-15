@@ -46,8 +46,22 @@ K8 commands                                                |      Helm Command
         a. Below command will do the set of steps : Download helm binaries[gz] +  install + move to usr/local/bin
            - curl -L https://git.io/get_helm.sh | bash -s -- --version v3.8.2   [here as per your need take the version v.3.8.2]
            - helm version
- 5.) Helm chart architecture 
+ 5.) Helm chart architecture [!refer diagram in reamdme.md - how the helm interact with K8 cluster]
+ 6.) Helm basic commands 
+      - helm install myhellworld helloworld
+      - helm delete myhellworld
+      - helm list -a
+ 7.) Create first helm chart 
+      Refer - https://jhooq.com/getting-start-with-helm-chart/
+              a. helm create helloworld
+              b. vi values.yaml -> update ClusterIP to NodePort
+              c. helm install <Custom Name> helmworld
+                 Note: 4th helloworld must be the directory name that you have created,
+              d. helm list -a
+ 8.) Install K8 dashboard [UI] on Microk8s:  
+      a. Run a command : microk8s dashboard-proxy
 
-
-
+ 9.) Few commands for Helm:
+     - How to upgrade helm chart: helm upgrade myhellworld helloworld
+     - How to rollback helm chart: helm rollback  myhelloworld <revision number>
     
