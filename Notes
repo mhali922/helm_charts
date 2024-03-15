@@ -55,7 +55,7 @@ K8 commands                                                |      Helm Command
       Refer - https://jhooq.com/getting-start-with-helm-chart/
               a. helm create helloworld
               b. vi values.yaml -> update ClusterIP to NodePort
-              c. helm install <Custom Name> helmworld
+              c. helm install <Custom Name that as per our convenience> helmworld
                  Note: 4th helloworld must be the directory name that you have created,
               d. helm list -a
  8.) Install K8 dashboard [UI] on Microk8s:  
@@ -64,4 +64,18 @@ K8 commands                                                |      Helm Command
  9.) Few commands for Helm:
      - How to upgrade helm chart: helm upgrade myhellworld helloworld
      - How to rollback helm chart: helm rollback  myhelloworld <revision number>
+
+    - Helm --debug --dry-run: Validate before install/upgrade our helm chart and this interact to K8 and k8 validate.
+      helm install myhellworld --debug --dry-run helloworld
+
+    - Helm template: This command actually doesnot interact with the K8 cluster, it just checks/validate locally at terminal.
+      helm template helloworld
+
+    - Helm lint: this checks any error and configuration issues if any in our helm charts
+      helm lint helloworld
+
+    - Helm uninstall: to remove the uninstall the helm chart.
+      helm uninstall myhelloworld
+ 10.) Create our own custom charts for a application.
+      
     
