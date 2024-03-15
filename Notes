@@ -77,5 +77,7 @@ K8 commands                                                |      Helm Command
     - Helm uninstall: to remove the uninstall the helm chart.
       helm uninstall myhelloworld
  10.) Create our own custom charts for a application.
+      https://github.com/mhali922/Helm_custom_project.git
+      
       
     
