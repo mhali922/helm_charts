@@ -1,0 +1,11 @@
+Helm Charts 
+
+Why Helm Charts are required ?
+
+  -- can a pod/deployment or a docker container itself sufficient to get the running pod exposed outside ? 
+     answer is NO. as we required any service in the K8 to expose the pod outside to access by end user.
+
+- - How come HELM help to deploy any application with helm charts
+
+
+    
