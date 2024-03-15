@@ -1,11 +1,53 @@
 Helm Charts 
 
-Why Helm Charts are required ?
+1.) Why Helm Charts are required ?
 
   -- can a pod/deployment or a docker container itself sufficient to get the running pod exposed outside ? 
      answer is NO. as we required any service in the K8 to expose the pod outside to access by end user.
 
+   - deployment.yaml -> kubectl apply -f deployment.yaml -> at K8 cluster
+   - service.yaml -> kubectl apply -f deployment.yaml -> at K8 cluster
+
 - - How come HELM help to deploy any application with helm charts
+    But using helm, we can create an entry in to 
+    chart.yaml & deployment.yaml ->  
+
+    this single command is required using a single command: helm install mychart
+
+2.) why K8 needed ? - 
+1.) Scalability - single docker container can't serve million of request/users, hence we need k8 to scale.
+2.) Autimate docker deployment - automate docker container deployment in K8.
+3.) Auto healing - In case docker container is unhealthy, so K8 is responsible for this might be replacing the container or other mechanism
+4.) Rollout & Rollback
+
+3.) How helm charts manage inside K8 cluster?
+
+K8 commands                                                |      Helm Command
+- kubectl apply -f deployment.yaml                         |
+- kubectl apply -f service.yaml                            |      helm install my-app ./my-chart
+- kubectl apply -f ingress.yaml                            |
+                                                           |
+- kubectl delete -f deployment.yaml                        |
+- kubectl delete -f service.yaml                           |      helm uninstall my-app 
+- kubectl delete -f ingress.yaml                           |
+
+4.) How to install HELM ?
+
+  Pre-requisite is 
+    K8 Cluster it could be EKS(AWS), AKS(Azure) or GKE(GCP) those are PAID options.
+
+    1.) Microk8s is the k8s for the development as a FREE option.
+
+        -  How to install Microk8s based on the machine of yours - https://microk8s.io/#install-microk8s
+        -  and kubectl cli 
+        -  and connectl microk8s with kubectl by looking this to configure .kube - https://microk8s.io/docs/working-with-kubectl 
+
+    2.) Now install helm once above pre-requisite is done.
+        a. Below command will do the set of steps : Download helm binaries[gz] +  install + move to usr/local/bin
+           - curl -L https://git.io/get_helm.sh | bash -s -- --version v3.8.2   [here as per your need take the version v.3.8.2]
+           - helm version
+ 5.) Helm chart architecture 
+
 
 
     
