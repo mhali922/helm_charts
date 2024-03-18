@@ -16,9 +16,9 @@ Helm Charts
 
 2.) why K8 needed ? - 
 1.) Scalability - single docker container can't serve million of request/users, hence we need k8 to scale.
-2.) Autimate docker deployment - automate docker container deployment in K8.
-3.) Auto healing - In case docker container is unhealthy, so K8 is responsible for this might be replacing the container or other mechanism
-4.) Rollout & Rollback
+2.) Automate docker deployment - automate docker container deployment in K8.
+3.) Auto healing - In case docker container is unhealthy, so K8 is responsible for this might be replacing the container or an other mechanism
+4.) Rollout & Rollback changes in a frequent ways
 
 3.) How helm charts manage inside K8 cluster?
 
@@ -78,6 +78,8 @@ K8 commands                                                |      Helm Command
       helm uninstall myhelloworld
  10.) Create our own custom charts for a application.
       https://github.com/mhali922/Helm_custom_project.git
+
+11.) we shall discuss on the helmfile sync command - that even does not require any helm commands as well.
       
       
     
